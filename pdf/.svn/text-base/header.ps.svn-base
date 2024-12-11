@@ -1,0 +1,79 @@
+/hole
+{ newpath 0 0 1.55 0 360 arc fill pop } def
+
+/drawWhitePeg
+{ 2 setlinewidth
+  newpath 0 0 2.0 0 360 arc 1 setgray fill
+  newpath 0 0 5.2 0 360 arc 0 setgray stroke } def
+
+/drawBlackPeg
+{ 2 setlinewidth
+  newpath 0 0 5.0 0 360 arc 0 setgray fill
+  newpath 0 0 5.2 0 360 arc 0 setgray stroke } def
+
+/inPixels
+{ 1 sub -18 mul exch 18 mul exch } def
+
+/whitePeg
+{ inPixels 2 copy translate drawWhitePeg neg exch neg exch translate } def
+
+/blackPeg
+{ inPixels 2 copy translate drawBlackPeg neg exch neg exch translate } def
+
+/link
+{ 2 setlinewidth
+  inPixels 4 2 roll inPixels
+  3 index 2 index sub 7.74 div dup neg  6 -1 roll add 5 1 roll 3 -1 roll add 2 1 roll
+  2 index 1 index sub 7.74 div dup neg  5 -1 roll add 4 1 roll add
+  moveto lineto stroke
+} def
+
+
+/makeBoard
+{ 
+  translate
+
+  %---- first row of dots
+  18 0 translate
+  2 1 12 { 18 0 translate hole } for
+  -216 -18 translate
+
+  %---- rows 2-12
+  2 1 12 {
+  1 1 12 { 18 0 translate hole } for
+  -216 -18 translate pop
+  } for
+
+  %---- border lines
+  /LeftBorderline
+  { 1 setlinewidth newpath 0 -4 moveto 3 -4 lineto 3 -200 lineto 0 -200 lineto closepath fill } def
+
+  /TopBorderline
+  { 1 setlinewidth newpath 4 0 moveto 4 -3 lineto 200 -3 lineto 200 0 lineto closepath stroke } def
+
+  25 209 translate TopBorderline LeftBorderline
+
+  %---- put the origin back where it started. No more translates after this.
+  -25 7 translate
+
+  %---- border around the whole puzzle
+  newpath -15 32 moveto 225 32 lineto 225 -207 lineto -15 -207 lineto closepath stroke
+  
+  %---- letters across and numbers down
+  /Trebuchet-MS-Bold findfont 12 scalefont setfont
+  /Letter
+  { dup 9 add 26 1 string cvrs
+    dup stringwidth pop 2 div neg 3 -1 roll 18 mul add 9 moveto show } def
+  1 1 12 { Letter } for
+  
+  /Number
+  { dup 10 2 string cvrs
+    dup stringwidth pop neg 9 add 3 -1 roll -18 mul 14 add moveto show } def
+  1 1 12 { Number } for
+  
+  %---- puzzle number and "White to move:" at the top
+  /Trebuchet-MS-Bold findfont 15 scalefont setfont
+  -15 38 moveto dup stringwidth pop exch show
+  -15 add 38 moveto (. White to move:) show
+} def
+

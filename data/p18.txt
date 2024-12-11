@@ -1,0 +1,1 @@
+N:18; B: d5 f4 g4 i3 h6 l4 k6 j8 h9; W: i2 g3 l3 k5 e6 f8 e10 d12;  A: g7 (with a connection via F5 or I6)

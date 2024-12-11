@@ -1,0 +1,1 @@
+N:36; B: c2 g4 h6 i6 k5 l7; W: c5 e6 g3 h5 j6 h7 g8 g9 h11 j12 e9; B: h8 j9 l8 d8 c10 e11;  A: -f8'f7; IF: e3 -i6'-g'8i7 (with a connection from G8 to H11 via F10 or I9); FS: i5 i4; FS: -i6'-g'8i7 f9; FS: -i6'i7 i8; FS: i7 g7

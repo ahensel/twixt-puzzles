@@ -1,0 +1,1 @@
+N:47; B: c12 f8 f9 i6 j8 k10 j12; W: e7 g7 i8 i10 h12;  A: e8; IF: h9 g9; IF: g10 g9; IF: f3 f5

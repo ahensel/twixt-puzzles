@@ -1,0 +1,3 @@
+#!/bin/sh
+ruby prawngen.rb
+open twixtpuzzles.pdf

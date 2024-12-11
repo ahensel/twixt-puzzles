@@ -1,0 +1,12 @@
+(1) 72 720 makeBoard
+4 9 whitePeg
+6 8 whitePeg
+4 9 6 8 link
+6 6 blackPeg
+8 7 blackPeg
+6 6 8 7 link
+9 9 blackPeg
+8 7 9 9 link
+5 12 whitePeg
+
+showpage

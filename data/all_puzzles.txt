@@ -1,0 +1,57 @@
+N:1; B: f6 h7 i9; W: d9 f8 e12;  A: d5; IF: c5 b6 e4 c4; IF: e5 f4 c6 e6
+N:2; B: e2 g3 i4 a3; W: d3 f8 g10;  A: b4; IF: e5 e6; IF: e6 e5 a4 e1; IF: d6 d7
+N:3; B: c5 h5 h10 j11; W: d5 f10 g12;  A: b6; IF: e4 c4; IF: e8 e7; FS: f6 e4 i5 i3 g6 j5 h4 g4
+N:4; B: e8 f11 h12; W: g4 h6 e9 d12;  A: c8; IF: f10 d6 d9 d10; FS: d7 f10 e5 d9
+N:5; B: g4 i5 c12; W: f5 f12 h11;  A: d6; IF: f7 e9 d10 g8; IF: f8 g9; IF: g8 g7
+N:6; B: j5 h6 e7; W: d4 f7 i10;  A: d8; IF: f5 e6; IF: c8 e5
+N:7; B: j4 h5 e6 l10 b9; W: d3 c5 g6;  A: f8; IF: f4 d7; IF: d8 f4; FS: e5 g7 d7 d8; FS: e7 d8 e5 f9 h8 h10; FS: d8 c7
+N:8; B: l2 h4 e5 c6 k7; W: g4 e7 g8 d11;  A: i5 (Each section of White's bridge is now secure. Black cannot threaten 2 parts of it at once.)
+N:9; B: c6 f5 c9 f7 g9; W: f3 d6 f8 d9 b10;  A: b5; IF: d8 c6; IF: d7 c8; IF: d4 c3
+N:10; B: h5 j6 g7 k10 c12; W: c5 e5 g6 e12;  A: e8; IF: d8 c9; IF: f8 c9; IF: d9 c9
+N:11; B: e4 i4 j6 h7; W: f6 g8 i9;  A: e5; IF: g5 d3 e6 d7; IF: d6 f3 f5 g4; FS: e3 f2 d5 d3
+N:12; B: b5 f4 i4 h6 j7; W: g6 i7 h9 e12;  A: d4; IF: d5 h4 g3 f3; IF: d3 f5 h5 c2 f6 e7; FS: f5 e6 g3 g5; FS: f5 e6 e7 h3 d5 d4; FS: h4 g3 f3 e2; FS: f3 e2 h4 g3; FS: e3 f5; FS: d5 e6
+N:13; B: b4 f4 i4 h6 j7; W: g6 i7 h9 e12;  A: e3; IF: f5 e5 d3 g4; IF: d3 h4 g3 g4 e2 d1 e6 f6 g7 h7 (with a connection to H9 via F8 or J8); IF: e6 d5 c7 h4 g3 g4 e2 c2 g5 f3 d2 -d'4-f3'd4; FS: d4 d3; FS: f3 e2 h4 g3; FS: f5 e6
+N:14; B: c2 f6 g8 i7; W: g4 d8 e10;  A: d5; IF: e5 f4 c6 e6; IF: d4 e5
+N:15; B: c3 f5 h6 i8 j4 l5; W: d4 d7 e9 g8 d12;  A: e5; IF: e3 d3; IF: e2 g4; FS: b3 e4; FS: f4 d6 c5 d5
+N:16; B: i3 g4 f6 h7 c7 k8 l6; W: e3 f5 g6 h4 j3 k9 j11 f10 e12;  A: g8 (with a connection via E7 or I7)
+N:17; B: e5 g6 i6 k5 c9 e10 f10; W: e4 d6 g5 d12 f11 h10;  A: g9 (with a connection via E8, F7, or H7)
+N:18; B: d5 f4 g4 i3 h6 l4 k6 j8 h9; W: i2 g3 l3 k5 e6 f8 e10 d12;  A: g7 (with a connection via F5 or I6)
+N:19; B: c5 f6 g7 i8 i7 k6; W: e6 h7 h9 e10 f12;  A: g5; IF: d7 j8
+N:20; B: b3 e4 h3 j4 g6 f8; W: d4 c7 c11 g7 i6 h9;  A: f3 (with a connection to either C7 or I6); FS: f5 f4 b5 c3
+N:21; B: d5 f5 g7 i8 j8 l9 k11 h10 e10 f12 d11; W: c4 b6 h5 i7 e9 k10 j12;  A: i11; IF: d8 j9; IF: j10 g10
+N:22; B: j4 l5 f6 h7 l9 f9 d10; W: h4 g4 e5 f8 g8 i9 h11;  A: h8; IF: e8 i6; IF: j6 f7
+N:23; B: d8 f7 h10 i8 j6 l7; W: d6 h6 f9 e11 g12 l2;  A: e9; IF: e5 g8 h2 e4 f3 i4 j3 k3; IF: g5 c8 d2 g4 g9 c4; IF: e10 g8 f11 -e'10g10; FS: g7 g5 g4 h7
+N:24; B: f4 d5 b6 c8; W: e2 f5 d6 c6 d8 b9; B: f6 h7 j8;  A: h4; IF: h3 j3 j2 l2 d7 e5 h5 g4 j4 i3 l3 k2; FS: g3 d7 e5 g4
+N:25; B: c2 d3 e3 e4 g2 i3 i2 k3 l3 k5; W: h2 j3 h4 j4 h3 f4 f3 d5 c7 d9 j9; B: e5 f5 g6 i5;  A: c3; IF: a3 -g3'\g3'd4 (with a connection via B5 or E6); FS: -g3'\g3'd4 c5
+N:26; W: d4 f5 h4 j5 i3 f6 e8 g9 f11; B: e2 g3 i4 l9 g5 i6 g7 h9 e7 d9 e4; W: f3; B: c3;  A: f7 (with a connection via D6 or H6)
+N:27; W: b6 d7 e9 d11 e6 e8 f4 g7 g4 h7 h9 i3 i9 j8 j11 l12; B: a5 c6 e5 d6 f7 f5 g6 i6 h4 l7 k9 i8 j10 g9 i10 g11 e12 c11 b9; A: -g'8g8 (with the threat of either F10 or -D'8C9)
+N:28; W: e4 j4 i6 h8 g6 c7 d9 e11 f10 h9 j10; B: d3 c5 f4 i5 j5 f6 l6 g7 i7 e8 g9 l9 k11 i12 g11 e10;  A: g5; IF: d7 h7 j9 -g'7f8; FS: h7 i8 -h'7j8 h5
+N:29; B: b5 c7 e7 f5 j5 i7; W: b3 j3 j7 d8 f9 g11;  A: h8 f4 (alternate move order); IF: l6 f4 g3 e6 e4 d4; IF: l6 f4 e3 g6 g4 h4
+N:30; B: d5 e5 d7 h5 g7 k4 l5 k7 j9 l10; W: b2 k2 l4 i4 j6 d6 f9 f10 g11 d10;  A: e4 -f'10g8 (alternate move order); IF: b6 -f'10g8 g4 h6 i3 -i'5j5; IF: f3 c8 d4 c4
+N:31; B: f6 g8 i7 j4 k7; W: k2 g6 j8 h9 c9;  A: e5 k6 (alternate move order); IF: d5 k6 l5 i5
+N:32; B: i4 g5 f6 c7 b9 k8; W: e6 j5 h9 g11;  A: f4 i7 (alternate move order); IF: e8 i7 k5 g6
+N:33; B: b4 g4 f6 g7 i8 i10 k11 l9; W: f3 i3 l4 i5 i6 j8 d8 c10;  A: e6; IF: d5 f8 h5 h9 j6 k6; FS: f7 e6; FS: f8 e8 h9 g9
+N:34; W: c4 d5 f4 g6 c7 d9 e9 g10 i10 k8 j4; B: j3 l4 f3 g5 h7 f8 d7 b6 c8 f10 d11;  A: c11; IF: b12 g9 e8 -f9'e10
+N:35; B: g3 h5 k4 l6 b8 g8 i8 f10; W: f4 g7 i6 j9 l8 k11 b11 d12;  A: g2; IF: j6 e8 d9 h8 e6 -h6'g6; IF: j6 e8 h10 c9 e6 d5 c5 f6; IF: f6 h4; FS: e8 e4
+N:36; B: c2 g4 h6 i6 k5 l7; W: c5 e6 g3 h5 j6 h7 g8 g9 h11 j12 e9; B: h8 j9 l8 d8 c10 e11;  A: -f8'f7; IF: e3 -i6'-g'8i7 (with a connection from F8 to H11 via F10 or I9); FS: i5 i4; FS: -i6'-g'8i7 f9; FS: -i6'i7 i8; FS: i7 g7
+N:37; B: f6 h8 i8 j8 l7 c9 e10 g11; W: e3 b6 b8 k4 j7 k8 k12 d12;  A: d7 i9 (alternate move order); IF: a10 i9 j6 h7 (with the threat of linking either via I5 or F8)
+N:38; B: c2 e5 g4 h6 g7 h9 e9 k8 l10 h12 a9; W: b3 c5 b7 f7 k3 j6 j8 c11 e12;  A: e10 h7 (alternate move order); IF: c8 g9 d7 h7 (with a connection via either G5 or I10)
+N:39; B: d4 l4 j5 h8 d7 b8 b10 c12; W: h3 j4 h6 c9 e10 i10 j12;  A: g6; IF: f5 i5 g7 i8 i7 h7; FS: f7 i6 g5 g10 g9 e11; FS: f7 i6 g9 g5; FS: h7 g6; FS: i8 h4 g5 g6; FS: f6 g10 i8 h4 g5 g6
+N:40; B: d3 f4 k4 l6 h6 i8 a8 c9; W: b4 d5 f6 d9 c11 e12;  A: g6; IF: f5 c2 g7 e7; IF: f5 c2 e8 f8; IF: b2 h4; IF: f7 e7; FS: g4 h3 i3 j2
+N:41; B: f9 h8 i9 k8 k9 l11; W: g8 i7 l6 h11 j12;  A: f10; IF: d8 h9; IF: j7 e8; FS: g10 g11 h9 i10
+N:42; B: d8 f7 g8 i7 k8 l10; W: e7 g6 j5 i9 f10 h11 j12;  A: e9; IF: f9 g10 (with a connection via C8 or F8); IF: e10 f8 g9 h9; IF: h6 c8 f5 d5
+N:43; B: k6 l8 h7 i9 c11; W: j8 k10 h9 i11 g12;  A: g5; IF: i5 g7 e4 e6 g4 e2; FS: h5 f8 i7 j7
+N:44; B: h3 j4 l5 k7 l9 g4 h6; W: i4 k5 j7 i9 g8 h10 i12;  A: d4; IF: e3 e2; IF: c4 b5; IF: d7 f5; IF: f7 e7; FS: e4 f4 f6 d3; FS: c4 e5
+N:45; B: h4 f4 e6 l5 k7 j9 b4; W: j5 g6 e7 d9 e11 l10 j11 l1;  A: i5; IF: j4 h3; FS: i3 i6 g4 g5; FS: h3 i2 g5 g3; FS: h6 j4 e3 e2
+N:46; B: e2 f4 i6 h8 i10 l11 j12; W: d7 f8 j5 i7 j9 h11 f12;  A: e5; IF: g6 c4; IF: d5 g4
+N:47; B: c12 f8 f9 i6 j8 k10 j12; W: e7 g7 i8 i10 h12;  A: e8; IF: h9 g9; IF: g10 g9; IF: f3 f5
+N:48; B: h6 j7 l8 f11 d12; W: d6 i7 k8 l10 k12;  A: g8; IF: c6 f5; FS: g6 f5 e4 g7
+N:49; B: g6 h6 h11 j10 k10 l12 d7; W: f3 i7 f10 g12 k2;  A: h5; IF: i8 g7; IF: g4 h9 i5 j5; FS: f8 j7 g5 f5
+N:50; B: e4 i5 j7 k9; W: e8 g7 h11 j10;  A: f4; IF: g5 h5; IF: g3 h3; FS: e5 f6; FS: e3 f2 d5 d3; FS: g3 f2; FS: d5 d6 e3 f2 c7 d3
+N:51; B: e5 c4 b6 c8 g8 h10 f11 k7 l5; W: l3 d7 c9 b7 d11 b10 j10 h11 f12;  A: h5; IF: f6 i8; IF: g6 g7
+N:52; B: h7 j8 l7 a11; W: f11 h10 i8 k9 i12;  A: d6; IF: e6 f5 f8 c8; IF: e8 e9; FS: d7 f7 f6 g5 e9 e4 c4 a4; FS: f7 d7
+N:53; B: c7 h7 j8 i10 e10 l7 a6 a2; W: e8 g7 e11 g12 l3;  A: e7; IF: d8 -f7'f9; IF: g5 d5; FS: f9 f6; FS: f5 f8 d9 d8; FS: d8 f6 c6 e4
+N:54; B: e9 f7 h6 i4 k5 d2; W: d6 c8 d11 g11 e12;  A: c4 or f3 (alternate move order); IF: b3 f3 g3 e3 e2 d1
+N:55; B: g5 f7 k5 l3 j10 i12 e10 d2 b3 k8 l7; W: d6 f10 h11 g12 b10 j7 c8 c4 j3;  A: g4; IF: h3 e3; IF: f3 h6
+N:56; B: f4 h5 l5 j4; W: e7 g6 h10 i5;  A: b4; IF: d4 d3; FS: d4 b4
+N:57; B: l4 j5 g5 l7; W: i5 k9 g9 i10;  A: e5; IF: e6 h7 h4 g4; FS: h7 h4 e5 f5; FS: f7 f5 g4 f3; FS: g6 f7 f8 h4 e6 e4 f3 f2 d4 c3 b3 a2 g4 g2 g3 -e'3e3 c2 h3 j4 j2 l3 i4 k5 -f2'-g'3-i4'/e'3\g2'j6

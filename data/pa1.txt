@@ -1,0 +1,1 @@
+N:a1; FROM: lg567948-23; B: h4 f5 g9 i10 j12 l11 d8 b7; W: e8 f10 e12 k6 l4; A: f6; IF: d6 h7; FS: d6 d4; FS: g7 i6 i7 h8; FS: e7 f7

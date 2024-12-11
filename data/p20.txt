@@ -1,0 +1,1 @@
+N:20; B: b3 e4 h3 j4 g6 f8; W: d4 c7 c11 g7 i6 h9;  A: f3 (with a connection to either C7 or I6); FS: f5 f4 b5 c3

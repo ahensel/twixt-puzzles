@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="board.css" type="text/css">
+  <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+  <title>Twixt Puzzles</title>
+  <script language='javascript' type='text/javascript' src='prototype.js'></script>
+  <script language='javascript' type='text/javascript' src='move.js'></script>
+  <script language='javascript' type='text/javascript' src='peg.js'></script>
+  <script language='javascript' type='text/javascript' src='link.js'></script>
+  <script language='javascript' type='text/javascript' src='quarterboard.js'></script>
+  <script language='javascript' type='text/javascript' src='twixtcontroller.js'></script>
+  <script language='javascript' type='text/javascript' src='puzzleview.js'></script>
+</head>
+
+<body bgcolor="#d0f0ff" onload="showTitle()">
+  <div id='turn' class='turn'></div>
+  <div id='board' class='board'>
+  <img src='pieces/crosshair.gif' galleryimg='no' class='crosshair' id='crosshair' alt=''>
+  <img src='pieces/whitepeg.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/blackpeg.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/eselink.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/wswlink.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/sselink.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/sswlink.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/linkablemarker.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/esecut.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/wswcut.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/ssecut.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/sswcut.gif' galleryimg='no' class='piece' alt=''>
+  <img src='pieces/quarterboard.gif' galleryimg='no' width='240' height='239' alt=''></div>
+
+  <div id='boardglass' class='boardglass'></div>
+
+  <div class='answers'>
+    <div id='waiting'>
+      Click on your answer...
+    </div>
+    <div id='wrong'>
+      <div id='wrongText'>
+        WRONG
+      </div>
+      <div id='wrongAnswer'>
+      </div>
+      <div id='wrongAnswerButtons'>
+        <table>
+          <tr><td>
+            <input type='button' id='tryAgainButton' value='Try Again' onclick='tryAgain()'>
+          </td></tr><tr><td>
+            <input type='button' value='Show Answer' onclick='showAnswer()'>
+          </td></tr>
+        </table>
+      </div>
+    </div>
+    <div id='right'>
+      <div id='rightText'>
+        CORRECT! <span id='numTries'></span>
+      </div>
+      <div id='rightAnswer'>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <div class='answers'>
+      <h1>JavaScript was not detected. This site requires JavaScript to be enabled in your browser.</h1>
+    </div>
+  </noscript>
+
+  <div class='controls'>
+    <input type='button' id='nextPuzzleButton' value='Next Puzzle' onclick='nextPuzzle()'>
+    &nbsp;Skip to:&nbsp;<input type='text' id='puzzleNumber' size='2' maxLength='2'/>&nbsp;<input type='button' value='Go' onclick='skipTo()'>
+    &nbsp;You can continue clicking around or <input type='button' value='Reset Board' onclick='resetBoard()'>
+  </div>
+  
+  <div class='surround_instructions'>
+    <div class='instructions'>
+    This is a series of interactive Twixt quarterboard puzzles. Your challenge in each puzzle is to find the one clever move that leads to victory for White.
+    <p>
+    <b><u>Rules of Twixt:</u></b>
+    </p><p>
+    White's objective is to find a way to connect vertically across the board (on a quarterboard, row 1 to row 12); Black's objective is to connect horizontally (column A to column L).
+    </p><p>
+    Players take turns placing pegs. Any time two pegs are a knight's move apart, they are connected by a link. Links cannot cross.
+    </p><p>
+    You may not place a peg behind your opponent's border. (Note that there is no hole A1, because it is behind both players' borders.)
+    </p><p>
+    You may rearrange your own links on your turn. (Click on a link to remove it, and click on a peg to add all legal links to it. Your turn ends when you've placed a peg and have no remaining linkable gaps.)
+    </p><p>
+    <b><u>Other details:</u></b>
+    </p><p>
+    In a few of these puzzles, you will need to rearrange your links. Link removal notation is by the coordinates of the link's center, with the apostrophe standing in for "half". For example, -E8' would refer to removing the link between F8 and D9, or F9 and D8, and -E'8 would refer to removing the link between E7 and F9, or E9 and F7. This is unambiguous for link removal, since links cannot cross, but for link addition, the distinction is made by preceding the letter with \ or /. For example, /E8' would refer to adding a link between D9 and F8.
+    </p><p>
+    The first 40 puzzles are by the late Alex Randolph (Twixt's designer), and are included in a booklet that comes with the Klee game company's version of the game. The puzzles are generally of increasing difficulty. Puzzles 2, 7, and 23 were modified by Alan Hensel to eliminate unintended solutions. Those numbered 41 and higher are by Alan Hensel, and are based on positions in actual games.
+    </p><p>
+    The best place to play Twixt online is at <a href="http://www.littlegolem.net/jsp/games/gamedetail.jsp?gtid=twixt">Little Golem</a>.<br/>
+    You can read more about Twixt on <a href="http://en.wikipedia.org/wiki/Twixt">Wikipedia</a> or 
+    <a href="http://www.boardgamegeek.com/game/949">BoardGameGeek</a>.
+    </p><p>
+    You can also <a href="pdf/twixtpuzzles.pdf">download these puzzles in PDF format</a> for solving offline.<br/>
+    Mac OS X users can play with these puzzles as a <a href="widget/index.html">Dashboard widget</a>.
+    </p><p>
+    Have fun!
+    </p>
+    <div>Send all feedback about this site to Alan Hensel at:<br/><img src="email.png" alt=''/></div>
+    </div>
+  
+    <a href="http://www.ibiblio.org/" class='hostedby'>
+      <img src="http://www.ibiblio.org/hosted/images/ibiblio_hosted2-110x32.png" width="110" height="32" border="0" alt="hosted by ibiblio" />
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="../board.css" type="text/css">
+<title>Twixt Puzzles Dashboard Widget (Mac OS X)</title>
+</head>
+
+<body bgcolor="#d0f0ff">
+<h2>Twixt Puzzles Dashboard Widget (Mac OS X)</h2>
+<div style='background-color: white; border: 1px solid black; padding: 10px;'>
+<p>This widget is just like the <a href="../index.html">web page</a> that it is based on. Here is a screen shot:</p>
+<p>
+<img src="screenshot.png" alt="widget screenshot">
+</p>
+<p>Mac OS X 10.4 Tiger is required. If you're using Safari, click the download link. When the widget download is complete, Show Dashboard, click the Plus sign to display the Widget Bar and click the widget's icon in the Widget Bar to open it. If you're using a browser other than Safari, click the download link. When the widget download is complete, unarchive it and place it in /Library/Widgets/ in your home folder. Show Dashboard, click the Plus sign to display the Widget Bar and click the widget's icon in the Widget Bar to open it.</p>
+
+<p><a href="http://www.ibiblio.org/twixtpuzzles/Twixt%20Puzzles.wdgt.zip">Download</a> (380K)</p>
+</div>
+<div>
+  <a href="http://www.ibiblio.org/" class='hostedby'>
+    <img src="http://www.ibiblio.org/hosted/images/ibiblio_hosted2-110x32.png" width="110" height="32" border="0" alt="hosted by ibiblio" />
+  </a>
+</div>
+</body>
+</html>

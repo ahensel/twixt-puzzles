@@ -1,0 +1,1 @@
+N:31; B: f6 g8 i7 j4 k7; W: k2 g6 j8 h9 c9;  A: e5 k6 (alternate move order); IF: d5 k6 l5 i5

@@ -1,0 +1,1 @@
+N:50; B: e4 i5 j7 k9; W: e8 g7 h11 j10;  A: f4; IF: g5 h5; IF: g3 h3; FS: e5 f6; FS: e3 f2 d5 d3; FS: g3 f2; FS: d5 d6 e3 f2 c7 d3
