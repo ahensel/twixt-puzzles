@@ -1,69 +1,59 @@
-function Move()
-{
-  this.removedLinks = new Array()
-  this.addedLinks = new Array()
-  
-  this.removeLink = function(link) {
-    var index = this.indexOf(this.addedLinks, link)
-    if (index >= 0) {
-      this.addedLinks.splice(index, 1)
-    }
-    else {
-      this.removedLinks.push(link)
-    }
+class Move {
+  constructor() {
+    this.removedLinks = [];
+    this.addedLinks = [];
+    this.peg = null;
   }
-  
-  this.addLink = function(link) {
-    var index = this.indexOf(this.removedLinks, link)
+
+  removeLink(link) {
+    const index = this.indexOf(this.addedLinks, link);
     if (index >= 0) {
-      this.removedLinks.splice(index, 1)
-    }
-    else {
-      this.addedLinks.push(link)
+      this.addedLinks.splice(index, 1);
+    } else {
+      this.removedLinks.push(link);
     }
   }
 
-  this.indexOf = function(links, link) {
-    for (var i = 0; i < links.length; i++) {
-      if (links[i].toString() == link.toString()) return i
+  addLink(link) {
+    const index = this.indexOf(this.removedLinks, link);
+    if (index >= 0) {
+      this.removedLinks.splice(index, 1);
+    } else {
+      this.addedLinks.push(link);
     }
-    return -1
   }
-  
-  this.sortLinks = function(links) {
-    links.sort(function(link1, link2) {
-      var link1y = link1.peg1.y + link1.peg2.y
-      var link2y = link2.peg1.y + link2.peg2.y
+
+  indexOf(links, link) {
+    return links.findIndex(l => l.toString() === link.toString());
+  }
+
+  sortLinks(links) {
+    return [...links].sort((link1, link2) => {
+      const link1y = link1.peg1.y + link1.peg2.y;
+      const link2y = link2.peg1.y + link2.peg2.y;
       
-      if (link1y < link2y) return -1
-      else if (link1y > link2y) return 1
-      else {
-        var link1x = link1.peg1.x + link1.peg2.x
-        var link2x = link2.peg1.x + link2.peg2.x
+      if (link1y !== link2y) return link1y - link2y;
+      
+      const link1x = link1.peg1.x + link1.peg2.x;
+      const link2x = link2.peg1.x + link2.peg2.x;
 
-        if (link1x < link2x) return -1
-        else if (link1x > link2x) return 1
-      }
-      return 0
-    })
-    return links
+      return link1x - link2x;
+    });
   }
-  
-  this.setPeg = function(peg) {
-    this.peg = peg
+
+  setPeg(peg) {
+    this.peg = peg;
   }
-  
-  this.getText = function() {
-    var text = ""
+
+  getText() {
+    const removedLinksText = this.sortLinks(this.removedLinks)
+      .map(link => link.getRemoveNotation())
+      .join('');
     
-    this.sortLinks(this.removedLinks).each(function(link) {
-      text += link.getRemoveNotation()
-    })
+    const addedLinksText = this.sortLinks(this.addedLinks)
+      .map(link => link.getAddNotation())
+      .join('');
     
-    this.sortLinks(this.addedLinks).each(function(link) {
-      text += link.getAddNotation()
-    })
-    
-    return text + this.peg.getNotation()
+    return removedLinksText + addedLinksText + this.peg.getNotation();
   }
 }
