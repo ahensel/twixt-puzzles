@@ -126,12 +126,12 @@ function buildFalseStartsHTML() {
     else if (puzzleFalseStarts.length > 1) {
       answer += "False starts:".bold();
     }
-    puzzleFalseStarts.each(function(falseStart) {
+    puzzleFalseStarts.forEach(falseStart => {
       answer += "<br/>&nbsp;&nbsp;";
-      answer += falseStart.match(moveRegExp).inject('', function(memo, move, index) {
+      answer += falseStart.match(moveRegExp).reduce((memo, move, index) => {
         return memo + " " + getMoveText(index+1, move);
-      })
-    })
+      }, '');
+    });
   }  
   return answer;
 }
@@ -599,7 +599,7 @@ function drawLinkGeneral(link, linkType)
                 ((dx === -2)? 'wsw':
                  (dx === -1)? 'ssw':
                  (dx ===  1)? 'sse':
-                             'ese') + linkType + '.gif';
+                              'ese') + linkType + '.gif';
   const leftPos = xPixels(link.minX());
   const topPos = yPixels(link.minY());
 

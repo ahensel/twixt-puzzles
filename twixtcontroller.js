@@ -2,20 +2,15 @@ class TwixtController {
   constructor() {
     this.board = new QuarterBoard();
     this.move = new Move();
-    this.dx = [1, 2, 2, 1, -1, -2, -2, -1];
-    this.dy = [-2, -1, 1, 2, 2, 1, -1, -2];
+    this.link_distances = [{x: 1, y: -2}, {x: 2, y: -1}, {x: 2, y: 1}, {x: 1, y: 2},
+                           {x: -1, y: 2}, {x: -2, y: 1}, {x: -2, y: -1}, {x: -1, y: -2}
+    ];
   }
 
   isLinkable(x, y) {
     const peg = this.board.getPeg(x, y);
-    if (!peg) return false;
 
-    for (let i = 0; i < 8; i++) {
-      if (!peg.hasLink(this.dx[i], this.dy[i]) && this.canLink(x, y, x + this.dx[i], y + this.dy[i])) {
-        return true;
-      }
-    }
-    return false;
+    return !!peg && this.link_distances.some(d => !peg.hasLink(d.x, d.y) && this.canLink(x, y, x + d.x, y + d.y));
   }
 
   removeLink(link) {
@@ -23,9 +18,9 @@ class TwixtController {
   }
 
   addLinksTo(peg, isNew) {
-    for (let i = 0; i < 8; i++) {
-      this.link(peg.x, peg.y, peg.x + this.dx[i], peg.y + this.dy[i], isNew);
-    }
+    this.link_distances.forEach(d => {
+      this.link(peg.x, peg.y, peg.x + d.x, peg.y + d.y, isNew);
+    });
   }
 
   link(x1, y1, x2, y2, isNew) {
@@ -60,16 +55,8 @@ class TwixtController {
 
   crossesPegsLinks(x, y, x1, y1, x2, y2) {
     const peg = this.board.getPeg(x, y);
-    if (!!peg) {
-      for (let i = 0; i < 8; i++) {
-        const dx = this.dx[i];
-        const dy = this.dy[i];
-        if (peg.hasLink(dx, dy) && this.doLinksCross(x1, y1, x2, y2, x, y, x + dx, y + dy)) {
-          return true;
-        }
-      }
-    }
-    return false;
+
+    return !!peg && this.link_distances.some(d => peg.hasLink(d.x, d.y) && this.doLinksCross(x1, y1, x2, y2, x, y, x + d.x, y + d.y));
   }
 
   doLinksCross(x1, y1, x2, y2, x3, y3, x4, y4) {
