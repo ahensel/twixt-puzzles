@@ -1,7 +1,22 @@
 document.addEventListener('mousedown', clickOnBoard);
 document.addEventListener('mousemove', mouseOverBoard);
 
-window.addEventListener('load', showPuzzle);
+window.addEventListener('popstate', (event) => {
+  updatePuzzleIdFromURL();
+  showPuzzle();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('puzzleNumber').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      skipTo();
+      return false;
+    }
+  });
+
+  updatePuzzleIdFromURL();
+  showPuzzle();
+});
 
 const moveRegExp = /[a-x][0-9][0-9]?|-\S*|\(.*\)/g;
 let turn = 1;
@@ -20,16 +35,38 @@ let answered = false;
 let showingPuzzle = false;
 let numTries = 0;
 
+function updatePuzzleIdFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlPuzzleId = urlParams.get('id');
+  if (urlPuzzleId) {
+    puzzleId = urlPuzzleId.trim().replace(/^0*/, '');
+  }
+  else {
+    puzzleId = 1;
+  }
+
+  if (!puzzleId) puzzleId = 1;
+}
+
 //---- Buttons on puzzle board:
+function updateURLfromPuzzleId() {
+  const newURL = new URL(window.location);
+  newURL.searchParams.set('id', puzzleId);
+  window.history.pushState({}, '', newURL);
+}
+
 function nextPuzzle() {
   puzzleId++;
+  updateURLfromPuzzleId();
   showPuzzle();
-//  window.location.search = "id=" + puzzleId
 }
 
 function skipTo() {
   puzzleId = document.getElementById('puzzleNumber').value.trim().replace(/^0*/, '');
-  showPuzzle();
+  if (puzzleId) {
+    updateURLfromPuzzleId();
+    showPuzzle();
+  }
 }
 
 function resetBoard() {
