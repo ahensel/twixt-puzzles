@@ -615,16 +615,17 @@ function addImgToBoard(imgfile, id, leftPos, topPos, width, height)
 {
   const b = document.getElementById('boardglass');
 
-  // Safari needs this, so the box doesn't grow
-  b.style.width = "240px";
-
-  img = document.createElement("IMG");
-  img.setAttribute("src", imgfile);
-  img.setAttribute("width", width);
-  img.setAttribute("height", height);
-  img.setAttribute("id", id);
-  img.style.position = "absolute";
-  img.style.left = leftPos + "px";
-  img.style.top = topPos + "px";
+  img = document.createElement("img");
+  Object.assign(img, {
+    src: imgfile,
+    width,
+    height,
+    id
+  });
+  Object.assign(img.style, {
+    position: "absolute",
+    left: `${leftPos}px`,
+    top: `${topPos}px`
+  });
   b.appendChild(img);
 }
