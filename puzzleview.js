@@ -1,7 +1,7 @@
 document.addEventListener('mousedown', clickOnBoard);
 document.addEventListener('mousemove', mouseOverBoard);
 
-window.addEventListener('load', () => showPuzzle());
+window.addEventListener('load', showPuzzle);
 
 const moveRegExp = /[a-x][0-9][0-9]?|-\S*|\(.*\)/g;
 let turn = 1;
@@ -367,16 +367,13 @@ function mouseOverBoard(evt) {
 
 function drawLinks(peg)
 {
-  const links = peg.getLinks();
-  for (let i=0; i<links.length; i++) {
-    drawLink(links[i]);
-  }
+  peg.getLinks().forEach(link => drawLink(link, 'link'));
 }
 
 function getLinkAt(x, y, dx, dy, turn)
 {
     const peg = twixtGame.board.getPeg(x, y);
-    if (!!peg && peg.color === turn) {
+    if (peg && peg.color === turn) {
       return peg.getLink(dx, dy);
     }
     return null;
@@ -476,16 +473,15 @@ function drawLinkableMarkers(link)
 
 function eraseLinkableMarkersAround(peg)
 {
+  const b = document.getElementById('boardglass');
+
   for (let x = peg.x - 3; x <= peg.x + 3; x++) {
     for (let y = peg.y - 3; y <= peg.y + 3; y++) {
       const markerName = getMarkerName(x, y);
       const m = document.getElementById(markerName);
-      if (!!m) {
-        if (!twixtGame.isLinkable(x, y)) {
-          const b = document.getElementById('boardglass');
-          b.removeChild(m);
-          numLinkableMarkers--;
-        }
+      if (m && !twixtGame.isLinkable(x, y)) {
+        b.removeChild(m);
+        numLinkableMarkers--;
       }
     }
   }
@@ -516,41 +512,43 @@ function drawCrosshair(x, y, color) {
 
   const ch = document.getElementById('crosshair');
   if (ch) {
-    ch.style.left = (leftPos - 6) + "px";
-    ch.style.top = (topPos - 6) + "px";
-    ch.style.display = "inline";
+    Object.assign(ch.style, {
+      left: (leftPos - 6) + 'px',
+      top: (topPos - 6) + 'px',
+      display: 'inline'
+    });
   }
   drawTickMarks(leftPos, topPos);
 }
 
 function drawTickMarks(leftPos, topPos) {
-  let vtick = document.getElementById('vtick');
-  if (!vtick) {
-    vtick = buildTickMark('vtick', true);
-    vtick.style.borderLeft = "1px dotted red";
-    vtick.style.height = "11px";
-  }
-  vtick.style.left = leftPos + "px";
-  vtick.style.display = "inline";
+  const vtick = document.getElementById('vtick') || buildTickMark('vtick');
+  Object.assign(vtick.style, {
+    borderLeft: '1px dotted red',
+    height: '11px',
+    left: `${leftPos}px`,
+    display: 'inline'
+  });
   
-  let htick = document.getElementById('htick');
-  if (!htick) {
-    htick = buildTickMark('htick', false);
-    htick.style.borderTop  = "1px dotted red";
-    htick.style.width  = "11px";
-  }
-  htick.style.top = topPos + "px";
-  htick.style.display = "inline";
+  const htick = document.getElementById('htick') || buildTickMark('htick');
+  Object.assign(htick.style, {
+    borderTop: '1px dotted red',
+    width: '11px',
+    top: `${topPos}px`,
+    display: 'inline'
+  });
 }
 
 function buildTickMark(id) {
-  const tick = document.createElement("DIV");
-  tick.setAttribute("id", id);
-  tick.style.position = "absolute";
-  tick.style.left = "1px";
-  tick.style.top  = "1px";
-  tick.style.width  = "0px";
-  tick.style.height = "0px";
+  const tick = document.createElement('div');
+  Object.assign(tick, { id });
+  Object.assign(tick.style, {
+    position: 'absolute',
+    left: '1px',
+    top: '1px',
+    width: '0',
+    height: '0'
+  });
   const boardGlass = document.getElementById('boardglass');
   if (boardGlass) boardGlass.appendChild(tick);  // race conditions on loading
   return tick;
@@ -575,21 +573,16 @@ function eraseLink(link) {
   }
 }
 
-function drawLink(link) {
-  drawLinkGeneral(link, 'link');
-}
-
 function drawCutLink(link) {
   if (cutLink && link.getLinkName() !== cutLink.getLinkName()) {
     eraseCutLink();
   }
-  drawLinkGeneral(link, 'cut');
+  drawLink(link, 'cut');
   drawTickMarks((xPixels(link.peg1.x) + xPixels(link.peg2.x))/2, (yPixels(link.peg1.y) + yPixels(link.peg2.y))/2);
   cutLink = link;
 }
 
-function drawLinkGeneral(link, linkType)
-{
+function drawLink(link, linkType) {
   const id = linkType + link.getLinkName();
   if (document.getElementById(id)) return;
 
