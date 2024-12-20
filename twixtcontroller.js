@@ -60,6 +60,12 @@ class TwixtController {
   }
 
   doLinksCross(x1, y1, x2, y2, x3, y3, x4, y4) {
+    // This is somewhat clever code, so it deserves an explanation.
+    // The idea is to check whether links cross by comparing the relative positions and slopes of the link centers.
+    // However, to avoid fractions and deal only in integers, divisions by 2 are cancelled out.
+    // So we use the sums and differences of x and y coordinates.
+    // The multiplications are used to determine the relative slopes of the links when that matters.
+
     const distX = Math.abs(x1 + x2 - x3 - x4);
     const distY = Math.abs(y1 + y2 - y3 - y4);
 
