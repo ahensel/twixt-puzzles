@@ -480,7 +480,7 @@ function yPixels(y) {
 
 function drawPeg(peg) {
   const img = (peg.color === 0)? 'black': 'white';
-  addImgToBoard('pieces/' + img + 'peg.gif', 'peg', xPixels(peg.x) - 6, yPixels(peg.y) - 6, 13, 13);
+  addImgToBoard(PEG_IMAGES[img + 'peg_img'], 'peg', xPixels(peg.x) - 6, yPixels(peg.y) - 6, 13, 13);
   eraseCrosshair();
 }
 
@@ -495,7 +495,7 @@ function drawLinkableMarkersInBox(minX, minY, maxX, maxY, color)
       if (twixtGame.isLinkable(x, y) && twixtGame.board.getPeg(x, y).color === color) {
         const markerName = getMarkerName(x, y);
         if (!document.getElementById(markerName)) {
-          addImgToBoard('pieces/linkablemarker.gif', markerName, xPixels(x) - 6, yPixels(y) - 6, 13, 13);
+          addImgToBoard(linkablemarker_img, markerName, xPixels(x) - 6, yPixels(y) - 6, 13, 13);
           numLinkableMarkers++;
         }
       }
@@ -625,11 +625,11 @@ function drawLink(link, linkType) {
 
   const dx = sign(link.peg1.y - link.peg2.y) * (link.peg1.x - link.peg2.x);
 
-  const linkImg = 'pieces/' +
+  const linkImg = LINK_IMAGES[
                 ((dx === -2)? 'wsw':
                  (dx === -1)? 'ssw':
                  (dx ===  1)? 'sse':
-                              'ese') + linkType + '.gif';
+                              'ese') + linkType + '_img'];
   const leftPos = xPixels(link.minX());
   const topPos = yPixels(link.minY());
 
