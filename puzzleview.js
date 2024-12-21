@@ -197,13 +197,8 @@ function submitMove() {
   }
 }
 
-function getPuzzleId() {
-  if (!puzzleId) puzzleId = 1;
-  return puzzleId;
-}
-
 function showPuzzle() {
-  puzzleId = getPuzzleId();
+  if (!puzzleId) puzzleId = 1;
 
   fetch('data/p' + puzzleId + '.txt')
     .then(response => {
@@ -230,9 +225,7 @@ function showPuzzleByText(text) {
   puzzleFalseStarts = [];
 
   puzzleText.split(';').forEach(puzzlePart => {
-    const puzzleParts = puzzlePart.split(':');
-    const lineType = trim(puzzleParts[0]);
-    const puzzleLine = trim(puzzleParts[1]);
+    const [lineType, puzzleLine] = puzzlePart.split(':').map(trim);
     if      (lineType === 'N')  puzzleName = puzzleLine;
     else if (lineType === 'A')  puzzleAnswers = puzzleLine;
     else if (lineType === 'IF') puzzleIfBlocks.push(puzzleLine);
@@ -479,8 +472,7 @@ function yPixels(y) {
 }
 
 function drawPeg(peg) {
-  const img = (peg.color === 0)? 'black': 'white';
-  addImgToBoard(PEG_IMAGES[img + 'peg_img'], 'peg', xPixels(peg.x) - 6, yPixels(peg.y) - 6, 13, 13);
+  addImgToBoard(PEG_IMAGES[peg.color], 'peg_' + peg.getNotation(), xPixels(peg.x) - 6, yPixels(peg.y) - 6, 13, 13);
   eraseCrosshair();
 }
 

@@ -19,6 +19,4 @@ const LINK_IMAGES = {
     esecut_img, ssecut_img, sswcut_img, wswcut_img
 }
 
-const PEG_IMAGES = {
-    blackpeg_img, whitepeg_img
-}
+const PEG_IMAGES = [blackpeg_img, whitepeg_img];
