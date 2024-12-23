@@ -276,11 +276,9 @@ function placePegByNotation(pegString) {
 // -----------------------------------------------------
 
 function clickOnBoard(evt) {
-  if (!evt) {
-    evt = event;
-  }
-  const pixelX = (document.all)? evt.clientX : evt.pageX;
-  const pixelY = (document.all)? evt.clientY : evt.pageY;
+  if (evt.button !== 0) return false; // only left mouse button
+  const pixelX = evt.clientX;
+  const pixelY = evt.clientY;
 
   if (isPegSpot(pixelX, pixelY))
   {
@@ -291,7 +289,7 @@ function clickOnBoard(evt) {
     if (!peg && !holdingForMarkers && twixtGame.board.isLegalSpot(x,y, turn)) {
       placePeg(x, y);
     }
-    else if (!!peg && peg.color === turn) {
+    else if (peg && peg.color === turn) {
       placeLinks(peg, false);
 
       if (holdingForMarkers && numLinkableMarkers === 0) {
@@ -304,8 +302,9 @@ function clickOnBoard(evt) {
     executeCutLink();
   }
 
-  if (yCoord(pixelY) < 13)
-    setTimeout('focusNextPuzzleButton()', 250);
+  if (yCoord(pixelY) < 13) {
+    setTimeout(focusNextPuzzleButton, 250);
+  }
 
   return true;
 }
@@ -638,14 +637,16 @@ function addImgToBoard(imgfile, id, leftPos, topPos, width, height)
   const b = document.getElementById('boardglass');
 
   img = document.createElement("img");
+  img.classList.add('piece');
   Object.assign(img, {
     src: imgfile,
+    draggable: false,
+    oncontextmenu: 'return false;',
     width,
     height,
     id
   });
   Object.assign(img.style, {
-    position: "absolute",
     left: `${leftPos}px`,
     top: `${topPos}px`
   });
