@@ -174,10 +174,10 @@ function buildFalseStartsHTML() {
 }
 
 function getMoveText(index, move) {
-  if (trim(move).charAt(0) === '(') {
+  if (move.trim().charAt(0) === '(') {
     return move.italics();
   }
-  moveText = trim(move).toUpperCase()
+  moveText = move.trim().toUpperCase()
   if (index % 2 === 1) moveText = moveText.bold();
   return (index + '.').fontcolor('#333333') + moveText;
 }
@@ -225,7 +225,7 @@ function showPuzzleByText(text) {
   puzzleFalseStarts = [];
 
   puzzleText.split(';').forEach(puzzlePart => {
-    const [lineType, puzzleLine] = puzzlePart.split(':').map(trim);
+    const [lineType, puzzleLine] = puzzlePart.split(':').map(s => s.trim());
     if      (lineType === 'N')  puzzleName = puzzleLine;
     else if (lineType === 'A')  puzzleAnswers = puzzleLine;
     else if (lineType === 'IF') puzzleIfBlocks.push(puzzleLine);
@@ -260,10 +260,6 @@ function clearBoard() {
     const childNode = b.childNodes[i];
     b.removeChild(childNode);
   }
-}
-
-function trim(s) {
-  return s.replace(/^\s*/, '').replace(/\s*$/, '');
 }
 
 function placePegByNotation(pegString) {
@@ -356,11 +352,8 @@ function showTitle() {
 }
 
 function mouseOverBoard(evt) {
-  if (!evt) {
-    evt = event;
-  }
-  const pixelX = (document.all)? evt.clientX : evt.pageX;
-  const pixelY = (document.all)? evt.clientY : evt.pageY;
+  const pixelX = evt.clientX;
+  const pixelY = evt.clientY;
 
   if (isPegSpot(pixelX, pixelY))
   {
