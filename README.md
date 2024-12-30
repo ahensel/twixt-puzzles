@@ -15,6 +15,8 @@ Interactive puzzle collection for the board game Twixt, featuring positions from
 
 - Original puzzles (1-40) by Alex Randolph, Twixt's designer
 - Additional puzzles by Alan Hensel
+- Corrections to puzzles provided by David Bush
+- All puzzles vetted for correctness by [Twixtbot](https://github.com/stevens68/twixtbot-ui)
 
 ## Resources
 
