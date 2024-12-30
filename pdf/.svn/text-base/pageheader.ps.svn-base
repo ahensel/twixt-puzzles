@@ -1,8 +1,0 @@
-
-0.6 0.6 scale
-130 1250 moveto
-/Trebuchet-MS findfont 20 scalefont setfont
-(Twixt Puzzles) show
-
-/Trebuchet-MS findfont 12 scalefont setfont
-(http://www.ibiblio.org/twixtpuzzles/) dup stringwidth pop 2 div neg 520 add 60 moveto show
