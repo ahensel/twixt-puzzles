@@ -1,1 +1,0 @@
-N:d3; B: f4 j7 k5 c12; W: f8 i11 l2 k4;  A: d4 (the "Medcalf Defense"); IF: d5 c6 c7 d9 b9 h8 h7 f9 e11; FS: g6 h3; FS: i5 h8 h7 f9; FS: f3 e6 g5 h8 d7 f9; FS: f3 e6 d7 c7 g5 h8; FS: d7 h8 h9 d5 g6 h3; FS: d9 f6 d4 b4

@@ -42,18 +42,8 @@ c3: put on the queue until there are 11 more.
 
 Twixtbot vetting:
 c1 works
-c2 broken. Bot finds g6 as a response. Flip the puzzle?    IF: H6 D7; FS: I9 I4 F6 E4 E5 G5 J3 I8 H7 H6 C4 E6
+c2 works, but is it too difficult?
 c3 works
 c4 works
-c5 works, flipped c2, is it too weird?
-
-a1 works
-a2 works, but False start G6 is a doozy, maybe add a black peg at d8 to make it easier?
-a3 works
-
-b1 has multiple solutions. False start H4 is a true start.
-b2 has no answer, and the bot can't find one. 
- 
-d1-d4 are Medcalf Defense attempts. None of them work on a quarterboard. Medcalf needs more space.
-
-
+c5 works
+c6 works

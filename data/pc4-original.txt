@@ -1,1 +1,0 @@
-N:c4; B: f4 h4 i6 j8 e7 d9 f8; W: e8 f6 h5 i7 h9; A: e4 d5 (both work); IF: d3 e2; FS: f2 f5; FS: e2 f5
