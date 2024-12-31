@@ -2,6 +2,8 @@
 
 Interactive puzzle collection for the board game Twixt, featuring positions from real games and crafted challenges.
 
+This is running online at [https://www.ibiblio.org/twixtpuzzles/](https://www.ibiblio.org/twixtpuzzles/)
+
 
 ## Features
 
@@ -14,15 +16,14 @@ Interactive puzzle collection for the board game Twixt, featuring positions from
 ## Credits
 
 - Original puzzles (1-40) by Alex Randolph, Twixt's designer
-- Additional puzzles by Alan Hensel
+- Additional puzzles (41-60) by Alan Hensel
 - Corrections to puzzles provided by David Bush
 - All puzzles vetted for correctness by [Twixtbot](https://github.com/stevens68/twixtbot-ui)
 
 ## Resources
 
-- Play online: [Little Golem](http://www.littlegolem.net/jsp/games/gamedetail.jsp?gtid=twixt)
-- Learn more: [Wikipedia](http://en.wikipedia.org/wiki/Twixt)
-- Game info: [BoardGameGeek](http://www.boardgamegeek.com/game/949)
+- Play Twixt online: [Little Golem](http://www.littlegolem.net/jsp/games/gamedetail.jsp?gtid=twixt)
+- Learn more about Twixt on [Wikipedia](http://en.wikipedia.org/wiki/Twixt) and [BoardGameGeek](http://www.boardgamegeek.com/game/949)
 
 ## License
 
@@ -39,3 +40,4 @@ python -m http.server 8000
 
 Once that is running, you should be able to point the browser to `http://localhost:8000/`.
 
+There is a PDF directory for generating these puzzles in printable form, but that has not been maintained.
